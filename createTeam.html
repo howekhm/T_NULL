@@ -1,0 +1,23 @@
+<body ng-app="teamsCreate">
+         <h1>Create Team</h1>
+		 <h2>Every team must join only one event</h2>
+         <div ng-controller="teamSubmit">
+         <form name="teamForm">          
+            <p>Target Event:
+             <input name="EventName" ng-model="input.event" required>
+             <span ng-show="teamForm.EventName.$touched && teamForm.EventName.$invalid">The event name is required.</span>
+            </p>
+			<p>Name:
+             <input name="newTeamName" ng-model="input.name" required>
+             <span ng-show="teamForm.newTeamName.$touched && teamForm.newTeamName.$invalid">The team name is required.</span>
+            </p>
+
+            <p>Introduction:
+             <input name="newTeamIntro" ng-model="input.intro" required>
+             <span ng-show="teamForm.newTeamIntro.$touched && teamForm.newTeamIntro.$invalid">The team introduction is required.</span>
+            </p>
+            <button ng-click="submit()" ng-disabled= "teamForm.newTeamIntro.$invalid || teamForm.newTeamName.$invalid">Submit</button>
+          </form>
+         </div>
+</body>
+<script>
